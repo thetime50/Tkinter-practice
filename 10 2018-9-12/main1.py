@@ -3,11 +3,17 @@
 import tkinter
 import PIL.Image,PIL.ImageTk
 import math
-import time
+import sys
 
+if getattr(sys, 'frozen', False):  # 是否Bundle Resource
+	base_path = sys._MEIPASS
+else:
+	base_path = '.'
+icon_path=base_path+'\\img\\emmm.ico'
+emm_path=base_path+'\\img\\timg.png'
 root=tkinter.Tk()
 root.title('emmmm')
-root.iconbitmap('./img/emmm.ico')
+root.iconbitmap(icon_path)
 cv=tkinter.Canvas(root,width=600,heigh=400,bg='white')
 #cv.place(x=0,y=0)
 '''
@@ -18,7 +24,7 @@ aimage=tkimg(100,100)
 cv.create_image(200,200,image=aimage,anchor=tkinter.SE)#是参考点相对于图片的方位
 '''
 class DrawImageClass:
-	img = PIL.Image.open('./img/timg.png')
+	img = PIL.Image.open(emm_path)
 	tkimg = lambda self, w, h: PIL.ImageTk.PhotoImage(self.img.resize((w, h), PIL.Image.ANTIALIAS))
 
 	def __init__(self):
