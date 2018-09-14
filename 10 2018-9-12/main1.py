@@ -6,6 +6,8 @@ import math
 import time
 
 root=tkinter.Tk()
+root.title('emmmm')
+root.iconbitmap('./img/emmm.ico')
 cv=tkinter.Canvas(root,width=600,heigh=400,bg='white')
 #cv.place(x=0,y=0)
 '''
