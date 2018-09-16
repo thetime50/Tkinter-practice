@@ -1,9 +1,12 @@
 #-*- conding: utf-8 -*-
 
-import tkinter
+import tkinter,tkinter.filedialog
 import PIL.Image,PIL.ImageTk
 import math
 import sys
+
+win_width=600
+win_high=400
 
 if getattr(sys, 'frozen', False):  # 是否Bundle Resource
 	base_path = sys._MEIPASS
@@ -14,15 +17,16 @@ emm_path=base_path+'\\img\\timg.png'
 root=tkinter.Tk()
 root.title('emmmm')
 root.iconbitmap(icon_path)
-cv=tkinter.Canvas(root,width=600,heigh=400,bg='white')
-#cv.place(x=0,y=0)
-'''
-tkimg=lambda w,h:PIL.ImageTk.PhotoImage(img.resize((w,h),PIL.Image.ANTIALIAS))
-bimage=tkimg(10,10)
-cv.create_image(200,200,image=bimage,anchor=tkinter.CENTER)
-aimage=tkimg(100,100)
-cv.create_image(200,200,image=aimage,anchor=tkinter.SE)#是参考点相对于图片的方位
-'''
+root.minsize(win_width,win_high)
+win_x=int((root.winfo_screenwidth()-win_width)*0.382)
+win_y=int((root.winfo_screenheight()-win_high)*0.382)
+#print('+%s+%s'%(str(win_x),str(win_y)))
+root.geometry('+%s+%s'%(str(win_x),str(win_y)))
+
+#cv=tkinter.Canvas(root,width=win_width,heigh=win_high,bg='white')
+cv=tkinter.Canvas(root,bg='white')
+
+######Draw###################################
 class DrawImageClass:
 	img = PIL.Image.open(emm_path)
 	tkimg = lambda self, w, h: PIL.ImageTk.PhotoImage(self.img.resize((w, h), PIL.Image.ANTIALIAS))
@@ -89,6 +93,8 @@ class DrawImageClass:
 		if self.checked:
 			self.draw()
 
+	def Ctl_s_fun(self,event):
+		name=tkinter.filedialog.asksaveasfilename(defaultextension='.jpg',filetypes=[('PNG', '.png'), ('JPG', '.jpg')])
 	def __del__(self):
 		print('__del__')
 
@@ -98,8 +104,10 @@ cv.bind('<B1-Motion>',DrawImage.B1Motion_fun)
 cv.bind('<Button-1>',DrawImage.B1Press_fun)
 cv.bind('<ButtonRelease-1>',DrawImage.B1Release_fun)
 root.bind('<c>',DrawImage.CPress_fun)
-root.bind('<Control_L>',DrawImage.CtlPress_fun)
-root.bind('<KeyRelease-Control_L>',DrawImage.CtlRelease_fun)
+root.bind('<Shift_L>',DrawImage.CtlPress_fun)
+root.bind('<KeyRelease-Shift_L>',DrawImage.CtlRelease_fun)
 
-cv.pack()
+root.bind('<Control-s>',DrawImage.Ctl_s_fun)
+
+cv.pack(fill=tkinter.BOTH, expand=True)
 root.mainloop()

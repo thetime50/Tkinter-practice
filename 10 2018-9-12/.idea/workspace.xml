@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="401da503-62dd-4a4b-a50d-f7158adf4ddc" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/../09 2018-9-11/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../09 2018-9-11/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build_exe.py" beforeDir="false" afterPath="$PROJECT_DIR$/build_exe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main1.py" beforeDir="false" afterPath="$PROJECT_DIR$/main1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/emm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/out/emm.exe" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +14,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/10_2018_9_12$main1.coverage" NAME="main1 Coverage Results" MODIFIED="1536956504174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/10_2018_9_12$main1.coverage" NAME="main1 Coverage Results" MODIFIED="1537112317466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/10_2018_9_12$main.coverage" NAME="main Coverage Results" MODIFIED="1536952755634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/2018_9_12$main1.coverage" NAME="main1 Coverage Results" MODIFIED="1536830151697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/2018_9_12$main.coverage" NAME="main Coverage Results" MODIFIED="1536824503546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/10_2018_9_12$build_exe.coverage" NAME="build_exe Coverage Results" MODIFIED="1536956511056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/10_2018_9_12$build_exe.coverage" NAME="build_exe Coverage Results" MODIFIED="1537068295125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/10_2018_9_12$build_exe__1_.coverage" NAME="build_exe (1) Coverage Results" MODIFIED="1536947511191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -57,62 +58,62 @@
     <session id="1350668916">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.41" value="1" />
+          <entry key="project.open.time.45" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="2" />
+          <entry key="py" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="2" />
+          <entry key="Python" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="667" />
+          <entry key="py" value="1612" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="667" />
+          <entry key="Python" value="1612" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="10 2018-9-12" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            <state relative-caret-position="212">
+              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
               <folding>
-                <element signature="e#25#39#0" expanded="true" />
-                <marker date="1536956492841" expanded="true" signature="2356:2359" ph="..." />
+                <element signature="e#25#58#0" expanded="true" />
+                <marker date="1537106547044" expanded="true" signature="2477:2480" ph="..." />
+                <marker date="1537106547044" expanded="true" signature="2559:2830" ph="..." />
+                <marker date="1537106547044" expanded="true" signature="2848:2851" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build_exe.py">
+        <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/tkinter/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+            <state relative-caret-position="117">
+              <caret line="1701" selection-start-line="1701" selection-end-line="1701" />
             </state>
           </provider>
         </entry>
@@ -133,6 +134,10 @@
       <find>self.x</find>
       <find>/</find>
       <find>timg</find>
+      <find>print</find>
+      <find>sp</find>
+      <find>PIL</find>
+      <find>create_imagecreate_image</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,8 +171,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="92" />
-    <option name="y" value="6" />
+    <option name="x" value="290" />
+    <option name="y" value="72" />
     <option name="width" value="1184" />
     <option name="height" value="788" />
   </component>
@@ -219,6 +224,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,7 +236,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,7 +273,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.build_exe">
+  <component name="RunManager" selected="Python.main1">
     <configuration name="build_exe" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="2018-9-12" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -342,8 +347,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.build_exe" />
         <item itemvalue="Python.main1" />
+        <item itemvalue="Python.build_exe" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -362,12 +367,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="92" y="6" width="1184" height="788" extended-state="0" />
+    <frame x="290" y="72" width="1184" height="788" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24199288" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49876544" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5012346" side_tool="true" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3797856" />
@@ -406,18 +411,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build_exe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+        <state relative-caret-position="399">
+          <caret line="21" column="52" lean-forward="true" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/site-packages/PIL/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/site-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-217">
+          <caret line="2563" column="12" selection-start-line="2563" selection-start-column="5" selection-end-line="2563" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/site-packages/PIL/EpsImagePlugin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="337" selection-start-line="337" selection-end-line="337" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="1701" selection-start-line="1701" selection-end-line="1701" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        <state relative-caret-position="212">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
           <folding>
-            <element signature="e#25#39#0" expanded="true" />
-            <marker date="1536956492841" expanded="true" signature="2356:2359" ph="..." />
+            <element signature="e#25#58#0" expanded="true" />
+            <marker date="1537106547044" expanded="true" signature="2477:2480" ph="..." />
+            <marker date="1537106547044" expanded="true" signature="2559:2830" ph="..." />
+            <marker date="1537106547044" expanded="true" signature="2848:2851" ph="..." />
           </folding>
         </state>
       </provider>
