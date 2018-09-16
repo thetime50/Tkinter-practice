@@ -1,9 +1,12 @@
 #-*- conding: utf-8 -*-
 
 import tkinter,tkinter.filedialog
-import PIL.Image,PIL.ImageTk
+import PIL.Image,PIL.ImageTk,PIL.ImageGrab
 import math
 import sys
+import win32con,win32clipboard
+from io import BytesIO
+#import io.StringIO
 
 win_width=600
 win_high=400
@@ -92,9 +95,55 @@ class DrawImageClass:
 		self.ctrl=False
 		if self.checked:
 			self.draw()
+	def Ctl_z_fun(self,event):
+		if len(self.image):
+			del self.image[-1]
+	def Ctl_c_fun(self,event):
+		if 'win' in sys.platform:
+			points = (cv.winfo_rootx(), cv.winfo_rooty(), cv.winfo_rootx() + cv.winfo_width(),
+					  cv.winfo_rooty() + cv.winfo_height())
+			img = PIL.ImageGrab.grab(points)
+			output = BytesIO()
+			img.convert("RGB").save(output, "BMP")
+			data = output.getvalue()[14:]
+			output.close()
+			win32clipboard.OpenClipboard()
+			win32clipboard.EmptyClipboard()
+			win32clipboard.SetClipboardData(win32con.CF_DIB, data)
+			win32clipboard.CloseClipboard()
+	def Ctl_v_fun(self,event):
+		im=PIL.ImageGrab.grabclipboard()
+		if not im:
+			try:
+				win32clipboard.OpenClipboard()
+				name = win32clipboard.GetClipboardData(win32con.CF_HDROP)
+				win32clipboard.CloseClipboard()
+				print(name)
+				im = PIL.Image.open(name[0])
+			except:
+				return
+		if im:
+			self.img = im
+			if im.width>im.height:
+				if im.width>30:
+					self.w=30
+					self.h=int(im.height*30/im.width)
+			else:
+				if im.height>30:
+					self.w=int(im.width*30/im.height)
+					self.h=30
+	def Ctl_r_fun(self,event):
+		self.img = PIL.Image.open(emm_path)
+		self.w = 20
+		self.h = 20
+
 
 	def Ctl_s_fun(self,event):
 		name=tkinter.filedialog.asksaveasfilename(defaultextension='.jpg',filetypes=[('PNG', '.png'), ('JPG', '.jpg')])
+		if name:
+			points=(cv.winfo_rootx(),cv.winfo_rooty(),cv.winfo_rootx()+cv.winfo_width(),cv.winfo_rooty()+cv.winfo_height())
+			img=PIL.ImageGrab.grab(points)
+			img.save(name)
 	def __del__(self):
 		print('__del__')
 
@@ -106,6 +155,10 @@ cv.bind('<ButtonRelease-1>',DrawImage.B1Release_fun)
 root.bind('<c>',DrawImage.CPress_fun)
 root.bind('<Shift_L>',DrawImage.CtlPress_fun)
 root.bind('<KeyRelease-Shift_L>',DrawImage.CtlRelease_fun)
+root.bind('<Control-z>',DrawImage.Ctl_z_fun)
+root.bind('<Control-c>',DrawImage.Ctl_c_fun)
+root.bind('<Control-v>',DrawImage.Ctl_v_fun)
+root.bind('<Control-r>',DrawImage.Ctl_r_fun)
 
 root.bind('<Control-s>',DrawImage.Ctl_s_fun)
 
