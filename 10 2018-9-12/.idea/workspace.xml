@@ -4,7 +4,6 @@
     <list default="true" id="401da503-62dd-4a4b-a50d-f7158adf4ddc" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/../09 2018-9-11/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../09 2018-9-11/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main1.py" beforeDir="false" afterPath="$PROJECT_DIR$/main1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/emm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/out/emm.exe" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/10_2018_9_12$main1.coverage" NAME="main1 Coverage Results" MODIFIED="1537124911513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/10_2018_9_12$main1.coverage" NAME="main1 Coverage Results" MODIFIED="1537196486060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/10_2018_9_12$main.coverage" NAME="main Coverage Results" MODIFIED="1536952755634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/2018_9_12$main1.coverage" NAME="main1 Coverage Results" MODIFIED="1536830151697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/2018_9_12$main.coverage" NAME="main Coverage Results" MODIFIED="1536824503546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -59,9 +58,10 @@
         <counts>
           <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.45" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -78,12 +78,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2168" />
+          <entry key="py" value="2351" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2168" />
+          <entry key="Python" value="2351" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -98,12 +98,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+            <state relative-caret-position="193">
+              <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
               <folding>
                 <element signature="e#25#58#0" expanded="true" />
-                <marker date="1537124910037" expanded="true" signature="3191:3759" ph="..." />
-                <marker date="1537124910037" expanded="true" signature="3898:4060" ph="..." />
+                <marker date="1537196425000" expanded="true" signature="1350:1576" ph="..." />
+                <marker date="1537196425000" expanded="true" signature="3618:4137" ph="..." />
               </folding>
             </state>
           </provider>
@@ -130,6 +130,7 @@
       <find>PIL</find>
       <find>create_imagecreate_image</find>
       <find>OpenClipboard</find>
+      <find>30</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,11 +163,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="194" />
-    <option name="y" value="5" />
-    <option name="width" value="1184" />
-    <option name="height" value="788" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="295" />
+    <option name="y" value="-17" />
+    <option name="width" value="888" />
+    <option name="height" value="616" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -216,7 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,6 +228,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -339,8 +340,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.build_exe" />
         <item itemvalue="Python.main1" />
+        <item itemvalue="Python.build_exe" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -359,15 +360,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="194" y="5" width="1184" height="788" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49876544" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49876544" visible="true" weight="0.098335855" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.5012346" side_tool="true" visible="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.5012346" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3797856" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37288135" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -376,7 +377,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="调试" order="11" weight="0.32771823" />
+      <window_info anchor="bottom" id="调试" order="11" weight="0.528125" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -397,7 +398,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main1.py</url>
-          <line>115</line>
+          <line>128</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
@@ -505,12 +506,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+        <state relative-caret-position="193">
+          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
           <folding>
             <element signature="e#25#58#0" expanded="true" />
-            <marker date="1537124910037" expanded="true" signature="3191:3759" ph="..." />
-            <marker date="1537124910037" expanded="true" signature="3898:4060" ph="..." />
+            <marker date="1537196425000" expanded="true" signature="1350:1576" ph="..." />
+            <marker date="1537196425000" expanded="true" signature="3618:4137" ph="..." />
           </folding>
         </state>
       </provider>

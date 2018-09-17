@@ -34,19 +34,32 @@ class DrawImageClass:
 	img = PIL.Image.open(emm_path)
 	tkimg = lambda self, w, h: PIL.ImageTk.PhotoImage(self.img.resize((w, h), PIL.Image.ANTIALIAS))
 
+	init_w=30
+	init_h=30
 	def __init__(self):
 		self.puten=False
 		self.motion_cnt=0
 		self.press_cnt = 0
 		self.release_cnt = 0
-		self.w=20
-		self.h=20
+		self.w,self.h=self.limtit_wh(self.img.width,self.img.height,self.init_w,self.init_h)
 		self.image =[]
 		self.checked=False
 		self.ctrl = False
+	def limtit_wh(self,w,h,limit_w,limit_h):
+		trans_w,trans_h=limit_w,limit_h
+		if w/h > limit_w/limit_h:
+			trans_w = limit_w
+			trans_h = int(h * limit_w / w)
+		else:
+			trans_w = int(w * limit_h / h)
+			trans_h = limit_h
+		if trans_w==0:trans_w=1
+		if trans_h==0:trans_h=1
+		return trans_w,trans_h
+
 	def draw(self):
 		if self.ctrl:
-			w=h=min(self.w,self.h)
+			w,h=self.limtit_wh(self.img.width,self.img.height,self.w,self.h)
 		else:
 			w=self.w
 			h=self.h
@@ -124,18 +137,10 @@ class DrawImageClass:
 				return
 		if im:
 			self.img = im
-			if im.width>im.height:
-				if im.width>30:
-					self.w=30
-					self.h=int(im.height*30/im.width)
-			else:
-				if im.height>30:
-					self.w=int(im.width*30/im.height)
-					self.h=30
+			self.w,self.h=self.limtit_wh(im.width,im.height,self.init_w,self.init_h)
 	def Ctl_r_fun(self,event):
 		self.img = PIL.Image.open(emm_path)
-		self.w = 20
-		self.h = 20
+		self.w,self.h=self.limtit_wh(self.img.width,self.img.height,self.init_w,self.init_h)
 
 
 	def Ctl_s_fun(self,event):
