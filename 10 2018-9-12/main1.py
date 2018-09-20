@@ -6,6 +6,8 @@ import math
 import sys
 import win32con,win32clipboard
 from io import BytesIO
+#import windnd
+
 #import io.StringIO
 
 win_width=600
@@ -141,7 +143,9 @@ class DrawImageClass:
 	def Ctl_r_fun(self,event):
 		self.img = PIL.Image.open(emm_path)
 		self.w,self.h=self.limtit_wh(self.img.width,self.img.height,self.init_w,self.init_h)
-
+	'''def drop_fun(self,flist):
+		for idx, i in enumerate(flist):
+			print(idx, i)'''
 
 	def Ctl_s_fun(self,event):
 		name=tkinter.filedialog.asksaveasfilename(defaultextension='.jpg',filetypes=[('PNG', '.png'), ('JPG', '.jpg')])
@@ -164,6 +168,7 @@ root.bind('<Control-z>',DrawImage.Ctl_z_fun)
 root.bind('<Control-c>',DrawImage.Ctl_c_fun)
 root.bind('<Control-v>',DrawImage.Ctl_v_fun)
 root.bind('<Control-r>',DrawImage.Ctl_r_fun)
+#windnd.hook_dropfiles(root,func=DrawImage.drop_fun)
 
 root.bind('<Control-s>',DrawImage.Ctl_s_fun)
 
