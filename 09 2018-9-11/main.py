@@ -5,6 +5,7 @@ import io
 from PIL import Image,ImageTk
 import threading
 import time
+import random
 
 
 Unit_x_cnt=40
@@ -28,7 +29,9 @@ class room_c:
 		self.cv.place(x=Win_interval,y=Win_interval)
 		self.unit_list=[['e' for y in range(Unit_y_cnt)] for x in range(Unit_x_cnt)]
 		self.slither_cnt=0
+		self.food_cnt=0
 		self.unit_cnt=Unit_y_cnt*Unit_x_cnt
+		self.empty_cnt=self.unit_cnt
 		#root.winfo_width()
 		#root.winfo_height()
 	class draw_unit_c:
@@ -56,6 +59,21 @@ class room_c:
 				self.draw_unit_pixel(ux,uy,ul,px,py)
 
 	#self.du=draw_unit_c()
+	def change_unit_flag(self,x,y,flag):
+		if self.unit_list[x][y]!=flag:
+			if self.unit_list[x][y]=='e':
+				self.empty_cnt-=1
+			elif self.unit_list[x][y]=='s':
+				self.slither_cnt -= 1
+			elif self.unit_list[x][y]=='f':
+				self.food_cnt -= 1
+			if flag == 'e':
+				self.empty_cnt += 1
+			elif flag == 's':
+				self.slither_cnt += 1
+			elif flag == 'f':
+				self.food_cnt += 1
+			self.unit_list[x][y] =flag
 	def draw_unit(self,sunit,clean=False):
 		#du.draw(x,y,dire)
 		global Unit_l
@@ -63,9 +81,9 @@ class room_c:
 		yoffset = sunit.y * Unit_l
 		self.rectangle(xoffset,yoffset,Unit_l,Unit_l,'blue')
 		if clean:#clear
-			self.unit_list[sunit.x][sunit.y]='e'
+			self.change_unit_flag(sunit.x,sunit.y,'e')
 		else:
-			self.unit_list[sunit.x][sunit.y] = 's'
+			self.change_unit_flag(sunit.x,sunit.y,'s')
 			if sunit.prev!=None and sunit.next==None:#tail
 				if sunit.dire=='N':
 					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 0, 3, 2)
@@ -115,6 +133,22 @@ class room_c:
 					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 4, 2, 5, 3)
 				elif sunit.next.dire=='E':
 					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 0, 2, 1, 3)
+	def draw_food(self,x,y):
+		self.change_unit_flag(x,y,'f')
+		self.draw_unit_pixels(x, y, Unit_l, 2,1,3,2)
+		self.draw_unit_pixels(x, y, Unit_l, 2,4,3,4)
+		self.draw_unit_pixels(x, y, Unit_l, 1,2,1,3)
+		self.draw_unit_pixels(x, y, Unit_l, 4,2,4,3)
+
+	def generate_food(self):
+		cnt=0
+		ind=random.randrange(self.empty_cnt)
+		for x in range(Unit_x_cnt):
+			for y in range(Unit_y_cnt):
+				if self.unit_list[x][y]=='e':
+					cnt+=1
+					if cnt==ind:
+						self.draw_food(x,y)
 
 class slither_unit_c:
 	def __init__(self,x,y,dire,prev=None,next=None):
@@ -165,7 +199,8 @@ class slither_c(room_c):
 			self.tail=self.tail.prev
 			self.tail.next=None
 			del p
-	def move(self,food):
+	def move(self):
+		ret=0
 		y = self.head.y
 		x = self.head.x
 		if self.head.dire=='N':
@@ -177,15 +212,21 @@ class slither_c(room_c):
 		if self.head.dire=='E':
 			x+=1
 		if x>=Unit_x_cnt or x<0 or y>=Unit_y_cnt or y<0:
-			return -1
-		self.apphead(self.head.dire, x, y)
-		self.draw_unit(self.head)
-		self.draw_unit(self.head.next)
-		if food==False:
-			self.draw_unit(self.tail,True)
-			self.delend()
-			self.draw_unit(self.tail)
-		return 0
+			ret=-1
+		elif self.unit_list[x][y]=='s':
+			ret = -1
+		else:
+			if self.unit_list[x][y]=='e':
+				self.draw_unit(self.tail,True)
+				self.delend()
+				self.draw_unit(self.tail)
+				ret=0
+			if self.unit_list[x][y] == 'f':
+				ret = 1
+			self.apphead(self.head.dire, x, y)
+			self.draw_unit(self.head)
+			self.draw_unit(self.head.next)
+		return ret
 	def change_head_dire(self,dire):
 		if (self.head.next.dire=='N'and dire!='S')or \
 				(self.head.next.dire == 'S' and dire != 'N') or \
@@ -199,7 +240,9 @@ class game_c(slither_c):
 		slither_c.__init__(self,root,x,y,n)
 		self.game_runing=False
 	def game_slither_move(self):
-		self.move(False)
+		ret=self.move()
+		if ret>0:
+			self.generate_food()
 		self.Move_after = self.cv.after(800, self.game_slither_move)
 	def start_fun(self,event=None):
 		if start_botton['text']=='Stop':
@@ -210,6 +253,8 @@ class game_c(slither_c):
 			start_botton['text'] = 'Stop'
 			self.Move_after=self.cv.after(800,self.game_slither_move)
 			self.game_runing = True
+			if self.food_cnt==0:
+				self.generate_food()
 	def up_fun(self,event):
 		#print(event, type(event.keysym))
 		if self.game_runing:
