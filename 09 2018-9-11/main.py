@@ -13,7 +13,7 @@ Unit_y_cnt=50
 Unit_l=10
 Canvas_wide=Unit_x_cnt*Unit_l
 Canvas_hight=Unit_y_cnt*Unit_l
-Option_region_wide=400
+Option_region_wide=300
 Win_interval=4
 Option_region_x_offset=Win_interval+Canvas_wide+Win_interval
 Option_region_x_center=Option_region_x_offset+Option_region_wide/2
@@ -87,7 +87,7 @@ class room_c:
 		global Unit_l
 		xoffset = sunit.x * Unit_l
 		yoffset = sunit.y * Unit_l
-		self.rectangle(xoffset,yoffset,Unit_l,Unit_l,'blue')
+		self.rectangle(xoffset,yoffset,Unit_l,Unit_l,'#c0c0ff')
 		if clean:#clear
 			self.change_unit_flag(sunit.x,sunit.y,'e')
 		else:
@@ -275,11 +275,11 @@ class game_c(slither_c):
 			self.cv.create_text((Canvas_wide / 2, 250), text=str(self.score), fill='#ff0000', \
 								font=("'Helvetica", 40, "normal"))
 		else:
+			self.Move_after = self.cv.after(self.move_time, self.game_slither_move)
 			if ret>0:
 				self.generate_food()
 				self.score+=10
 				Score_number_label['text']=str(self.score)
-			self.Move_after = self.cv.after(800, self.game_slither_move)
 	def start_fun(self,event=None):
 		if self.game_state == 'run':
 			self.game_state = 'stop'
@@ -288,7 +288,7 @@ class game_c(slither_c):
 		elif self.game_state == 'stop':
 			self.game_state = 'run'
 			start_botton['text'] = 'Stop'
-			self.Move_after=self.cv.after(800,self.game_slither_move)
+			self.Move_after=self.cv.after(self.move_time, self.game_slither_move)
 			if self.food_cnt==0:
 				self.generate_food()
 		else:
@@ -302,6 +302,8 @@ class game_c(slither_c):
 					  'Up': 'N',	'Down': 'S',	'Left': 'W',	'Right': 'E'}
 			#print(diredict[event.keysym])
 			self.change_head_dire(diredict[event.keysym])
+	def set_speed(self,speed):
+		self.move_time=820-int(speed)*10
 game=game_c(root,20,20,3)
 
 start_botton=tkinter.Button(root,text='Start',command=game.start_fun)
@@ -315,6 +317,10 @@ root.bind('<Up>',game.dire_fun)
 root.bind('<Down>',game.dire_fun)
 root.bind('<Left>',game.dire_fun)
 root.bind('<Right>',game.dire_fun)
+
+scale = tkinter.Scale(root, from_=0, to=80, length=200, orient=tkinter.HORIZONTAL, command=game.set_speed)
+scale.set(30)
+scale.place(x=Option_region_x_center, y=230, anchor=tkinter.CENTER)
 
 if __name__=='__main__':
 	root.mainloop()
