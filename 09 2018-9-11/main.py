@@ -244,6 +244,10 @@ class slither_c(room_c):
 			self.head.dire=dire
 			self.draw_unit(self.head)
 
+tkinter.Label(root,text='Score:',font=("'Helvetica", 15, "bold")).place(x=Option_region_x_center,y=100,anchor=tkinter.CENTER)
+Score_number_label=tkinter.Label(root,text='0',font=("'Helvetica", 15, "bold"))
+Score_number_label.place(x=Option_region_x_center,y=130,anchor=tkinter.CENTER)
+
 class game_c(slither_c):
 	def __init__(self,root,x,y,n):
 		#print('12313',dir(self))
@@ -254,6 +258,7 @@ class game_c(slither_c):
 		slither_c.__init__(self,self.root,self.start_x,self.start_y,self.start_n)
 		self.game_state='stop'
 		self.score=0
+		Score_number_label['text'] = str(self.score)
 	def __del__(self):
 		slither_c.__del__(self)
 	def game_slither_move(self):
@@ -261,10 +266,19 @@ class game_c(slither_c):
 		if ret<0:
 			self.game_state ='died'
 			start_botton['text'] = 'Restart'
+			self.cv.create_text((Canvas_wide/2,150),text='Game Over',fill='#ffa0a0',\
+					font=("'Helvetica", 40, "bold"))
+			self.cv.create_text((Canvas_wide/2,150),text='Game Over',fill='#ff0000',\
+					font=("'Helvetica", 40, "normal"))
+			self.cv.create_text((Canvas_wide / 2, 250), text=str(self.score), fill='#ffa0a0', \
+								font=("'Helvetica", 40, "bold"))
+			self.cv.create_text((Canvas_wide / 2, 250), text=str(self.score), fill='#ff0000', \
+								font=("'Helvetica", 40, "normal"))
 		else:
 			if ret>0:
 				self.generate_food()
 				self.score+=10
+				Score_number_label['text']=str(self.score)
 			self.Move_after = self.cv.after(800, self.game_slither_move)
 	def start_fun(self,event=None):
 		if self.game_state == 'run':

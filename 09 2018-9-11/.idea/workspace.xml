@@ -4,7 +4,6 @@
     <list default="true" id="0391dc14-d3c7-47ce-bdb8-f0c548dff251" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/09_2018_9_11$main.coverage" NAME="main Coverage Results" MODIFIED="1538923431303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/09_2018_9_11$main.coverage" NAME="main Coverage Results" MODIFIED="1538928271977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/09_2018_9_11$test.coverage" NAME="test Coverage Results" MODIFIED="1538919227043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/09_2018_9_11$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1538880688606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../01 2018-9-1" />
     <SUITE FILE_PATH="coverage/09_2018_9_11$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1538880703713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../00 2018-8-23" />
@@ -39,23 +38,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="5354" />
+          <entry key="py" value="5616" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="5354" />
+          <entry key="Python" value="5616" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="48" />
+          <entry key="Python" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="48" />
+          <entry key="py" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -66,27 +65,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="304" lean-forward="true" selection-start-line="304" selection-end-line="304" />
+            <state relative-caret-position="118">
+              <caret line="269" column="41" selection-start-line="269" selection-start-column="41" selection-end-line="269" selection-end-column="41" />
               <folding>
                 <element signature="e#24#38#0" expanded="true" />
-                <marker date="1538923501478" expanded="true" signature="587:614" ph="..." />
-                <marker date="1538923501478" expanded="true" signature="1085:1100" ph="..." />
-                <marker date="1538923501478" expanded="true" signature="1874:1875" ph="..." />
-                <marker date="1538923501478" expanded="true" signature="1936:2309" ph="..." />
-                <marker date="1538923501478" expanded="true" signature="5009:5233" ph="..." />
-                <marker date="1538923501478" expanded="true" signature="7727:7755" ph="..." />
-                <marker date="1538923501478" expanded="true" signature="8471:8790" ph="..." />
+                <marker date="1538928090556" expanded="true" signature="587:614" ph="..." />
+                <marker date="1538928090556" expanded="true" signature="1085:1100" ph="..." />
+                <marker date="1538928090556" expanded="true" signature="1874:1875" ph="..." />
+                <marker date="1538928090556" expanded="true" signature="1936:2309" ph="..." />
+                <marker date="1538928090556" expanded="true" signature="5009:5233" ph="..." />
+                <marker date="1538928090556" expanded="true" signature="7996:8024" ph="..." />
+                <marker date="1538928090556" expanded="true" signature="9019:9338" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/tkinter/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-99">
-              <caret line="2301" selection-start-line="2301" selection-end-line="2301" />
             </state>
           </provider>
         </entry>
@@ -125,6 +115,8 @@
       <find>12313</find>
       <find>__del__</find>
       <find>print</find>
+      <find>TkDefaultFont</find>
+      <find>Score_number_label</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,8 +137,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="92" />
-    <option name="y" value="-14" />
+    <option name="x" value="131" />
+    <option name="y" value="-8" />
     <option name="width" value="868" />
     <option name="height" value="768" />
   </component>
@@ -472,13 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/tkinter/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="2301" selection-start-line="2301" selection-end-line="2301" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../10 2018-9-12/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -493,19 +478,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="1311" column="8" selection-start-line="1311" selection-start-column="8" selection-end-line="1311" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="304" lean-forward="true" selection-start-line="304" selection-end-line="304" />
+        <state relative-caret-position="118">
+          <caret line="269" column="41" selection-start-line="269" selection-start-column="41" selection-end-line="269" selection-end-column="41" />
           <folding>
             <element signature="e#24#38#0" expanded="true" />
-            <marker date="1538923501478" expanded="true" signature="587:614" ph="..." />
-            <marker date="1538923501478" expanded="true" signature="1085:1100" ph="..." />
-            <marker date="1538923501478" expanded="true" signature="1874:1875" ph="..." />
-            <marker date="1538923501478" expanded="true" signature="1936:2309" ph="..." />
-            <marker date="1538923501478" expanded="true" signature="5009:5233" ph="..." />
-            <marker date="1538923501478" expanded="true" signature="7727:7755" ph="..." />
-            <marker date="1538923501478" expanded="true" signature="8471:8790" ph="..." />
+            <marker date="1538928090556" expanded="true" signature="587:614" ph="..." />
+            <marker date="1538928090556" expanded="true" signature="1085:1100" ph="..." />
+            <marker date="1538928090556" expanded="true" signature="1874:1875" ph="..." />
+            <marker date="1538928090556" expanded="true" signature="1936:2309" ph="..." />
+            <marker date="1538928090556" expanded="true" signature="5009:5233" ph="..." />
+            <marker date="1538928090556" expanded="true" signature="7996:8024" ph="..." />
+            <marker date="1538928090556" expanded="true" signature="9019:9338" ph="..." />
           </folding>
         </state>
       </provider>
