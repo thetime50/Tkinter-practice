@@ -22,93 +22,100 @@ Win_high=Win_interval+Canvas_hight+Win_interval
 root=tkinter.Tk()
 root.minsize(Win_wide,Win_high+6)
 root.resizable(0,0)
-cv=tkinter.Canvas(root,bg='white',width=Canvas_wide,height=Canvas_hight)
-cv.place(x=Win_interval,y=Win_interval)
-#root.winfo_width()
-#root.winfo_height()
-print(dir())
-class draw_unit_c:
-	''''''
-	img_list=['empty','food',\
-		'head',\
-		'tail',\
-		'body_NE', 'body_SE', 'body_SW', 'body_NW', 'body_NS', 'body_WE']
-	unit_img={x:Image.open('./img/'+x+'.png').resize((Unit_l,Unit_l),Image.ANTIALIAS) 	for x in img_list}
+class room_c:
+	def __init__(self,root):
+		self.cv=tkinter.Canvas(root,bg='white',width=Canvas_wide,height=Canvas_hight)
+		self.cv.place(x=Win_interval,y=Win_interval)
+		self.unit_list=[['e' for y in range(Unit_y_cnt)] for x in range(Unit_x_cnt)]
+		self.slither_cnt=0
+		self.food_cnt=0
+		self.unit_cnt=Unit_y_cnt*Unit_x_cnt
+		#root.winfo_width()
+		#root.winfo_height()
+	class draw_unit_c:
+		''''''
+		img_list=['empty','food',\
+			'head',\
+			'tail',\
+			'body_NE', 'body_SE', 'body_SW', 'body_NW', 'body_NS', 'body_WE']
+		unit_img={x:Image.open('./img/'+x+'.png').resize((Unit_l,Unit_l),Image.ANTIALIAS) 	for x in img_list}
 
-	def draw(self,x,y,dire):
-		global cv,Unit_l
-		#cv.create_image(x*Unit_l,y*Unit_l,image=self.unit_img[sr])
+		def draw(self,x,y,dire):
+			global Unit_l
+			#cv.create_image(x*Unit_l,y*Unit_l,image=self.unit_img[sr])
 
-def rectangle(x,y,w,h,colour):
-	cv.create_rectangle(x,y,x+w,y+h,fill=colour,width=1)
-def draw_unit_pixel(ux,uy,ul,px,py):
-	pixel_l=ul/6
-	x = ux * ul+px*pixel_l
-	y = uy * ul+py*pixel_l
-	rectangle(x, y, pixel_l, pixel_l, 'black')
-def draw_unit_pixels(ux,uy,ul,px1,py1,px2,py2):
-	for px in range(px1,px2+1):
-		for py in range(py1,py2+1):
-			draw_unit_pixel(ux,uy,ul,px,py)
+	def rectangle(self,x,y,w,h,colour):
+		self.cv.create_rectangle(x,y,x+w,y+h,fill=colour,width=1)
+	def draw_unit_pixel(self,ux,uy,ul,px,py):
+		pixel_l=ul/6
+		x = ux * ul+px*pixel_l
+		y = uy * ul+py*pixel_l
+		self.rectangle(x, y, pixel_l, pixel_l, 'black')
+	def draw_unit_pixels(self,ux,uy,ul,px1,py1,px2,py2):
+		for px in range(px1,px2+1):
+			for py in range(py1,py2+1):
+				self.draw_unit_pixel(ux,uy,ul,px,py)
 
-du=draw_unit_c()
-def draw_unit(sunit,clean=False):
-	#du.draw(x,y,dire)
-	global Unit_l
-	xoffset = sunit.x * Unit_l
-	yoffset = sunit.y * Unit_l
-	rectangle(xoffset,yoffset,Unit_l,Unit_l,'blue')
-	if clean:#clear
-		pass
-	elif sunit.prev!=None and sunit.next==None:#tail
-		if sunit.dire=='N':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 0, 3, 2)
-			draw_unit_pixel( sunit.x, sunit.y, Unit_l, 3, 3)
-		if sunit.dire=='S':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 3, 3, 5)
-			draw_unit_pixel( sunit.x, sunit.y, Unit_l, 3, 2)
-		if sunit.dire=='W':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 0, 2, 2, 3)
-			draw_unit_pixel( sunit.x, sunit.y, Unit_l, 3, 3)
-		if sunit.dire=='E':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 3, 2, 5, 3)
-			draw_unit_pixel( sunit.x, sunit.y, Unit_l, 2, 3)
-	elif sunit.prev==None and sunit.next!=None:#head
-		if sunit.dire=='N':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 1, 3, 1)
-		if sunit.dire=='S':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 4, 3, 4)
-		if sunit.dire=='W':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 1, 2, 1, 3)
-		if sunit.dire=='E':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 4, 2, 4, 3)
-		draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 2, 3, 3)
-		if sunit.next.dire=='N':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 4, 3, 5)
-		if sunit.next.dire=='S':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 0, 3, 1)
-		if sunit.next.dire=='W':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 4, 2, 5, 3)
-		if sunit.next.dire=='E':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 0, 2, 1, 3)
-	elif sunit.prev!=None and sunit.next!=None:#body
-		if sunit.dire=='N':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 0, 3, 1)
-		if sunit.dire=='S':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 4, 3, 5)
-		if sunit.dire=='W':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 0, 2, 1, 3)
-		if sunit.dire=='E':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 4, 2, 5, 3)
-		draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 2, 3, 3)
-		if sunit.next.dire=='N':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 4, 3, 5)
-		if sunit.next.dire=='S':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 0, 3, 1)
-		if sunit.next.dire=='W':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 4, 2, 5, 3)
-		if sunit.next.dire=='E':
-			draw_unit_pixels(sunit.x, sunit.y, Unit_l, 0, 2, 1, 3)
+	#self.du=draw_unit_c()
+	def draw_unit(self,sunit,clean=False):
+		#du.draw(x,y,dire)
+		global Unit_l
+		xoffset = sunit.x * Unit_l
+		yoffset = sunit.y * Unit_l
+		self.rectangle(xoffset,yoffset,Unit_l,Unit_l,'blue')
+		if clean:#clear
+			self.unit_list[sunit.x][sunit.y]='e'
+		else:
+			self.unit_list[sunit.x][sunit.y] = 's'
+			if sunit.prev!=None and sunit.next==None:#tail
+				if sunit.dire=='N':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 0, 3, 2)
+					self.draw_unit_pixel( sunit.x, sunit.y, Unit_l, 3, 3)
+				elif sunit.dire=='S':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 3, 3, 5)
+					self.draw_unit_pixel( sunit.x, sunit.y, Unit_l, 3, 2)
+				elif sunit.dire=='W':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 0, 2, 2, 3)
+					self.draw_unit_pixel( sunit.x, sunit.y, Unit_l, 3, 3)
+				elif sunit.dire=='E':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 3, 2, 5, 3)
+					self.draw_unit_pixel( sunit.x, sunit.y, Unit_l, 2, 3)
+			elif sunit.prev==None and sunit.next!=None:#head
+				if sunit.dire=='N':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 1, 3, 1)
+				elif sunit.dire=='S':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 4, 3, 4)
+				elif sunit.dire=='W':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 1, 2, 1, 3)
+				elif sunit.dire=='E':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 4, 2, 4, 3)
+				self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 2, 3, 3)
+				if sunit.next.dire=='N':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 4, 3, 5)
+				elif sunit.next.dire=='S':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 0, 3, 1)
+				elif sunit.next.dire=='W':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 4, 2, 5, 3)
+				elif sunit.next.dire=='E':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 0, 2, 1, 3)
+			elif sunit.prev!=None and sunit.next!=None:#body
+				if sunit.dire=='N':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 0, 3, 1)
+				elif sunit.dire=='S':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 4, 3, 5)
+				elif sunit.dire=='W':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 0, 2, 1, 3)
+				elif sunit.dire=='E':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 4, 2, 5, 3)
+				self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 2, 3, 3)
+				if sunit.next.dire=='N':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 4, 3, 5)
+				elif sunit.next.dire=='S':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 2, 0, 3, 1)
+				elif sunit.next.dire=='W':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 4, 2, 5, 3)
+				elif sunit.next.dire=='E':
+					self.draw_unit_pixels(sunit.x, sunit.y, Unit_l, 0, 2, 1, 3)
 
 class slither_unit_c:
 	def __init__(self,x,y,dire,prev=None,next=None):
@@ -123,15 +130,16 @@ class slither_unit_c:
 		if self.next!=None:
 			self.next.prev=self.prev
 
-class slither_c:
-	def __init__(self,x,y,n):
+class slither_c(room_c):
+	def __init__(self,root,x,y,n):
+		room_c.__init__(self,root)
 		self.head=None
 		self.tail=None
 		for i in range(n):
 			self.append('E',x-i,y)
 		p=self.head
 		while p!=None:
-			draw_unit(p)
+			self.draw_unit(p)
 			p=p.next
 	def __del__(self):
 		while self.head!=None:
@@ -172,12 +180,12 @@ class slither_c:
 		if x>=Unit_x_cnt or x<0 or y>=Unit_y_cnt or y<0:
 			return -1
 		self.apphead(self.head.dire, x, y)
-		draw_unit(self.head)
-		draw_unit(self.head.next)
+		self.draw_unit(self.head)
+		self.draw_unit(self.head.next)
 		if food==False:
-			draw_unit(self.tail,True)
+			self.draw_unit(self.tail,True)
 			self.delend()
-			draw_unit(self.tail)
+			self.draw_unit(self.tail)
 		return 0
 	def change_head_dire(self,dire):
 		if (self.head.next.dire=='N'and dire!='S')or \
@@ -185,23 +193,23 @@ class slither_c:
 				(self.head.next.dire == 'W' and dire != 'E') or \
 				(self.head.next.dire == 'E' and dire != 'W'):
 			self.head.dire=dire
-			draw_unit(self.head)
+			self.draw_unit(self.head)
 
 class game_c(slither_c):
-	def __init__(self,x,y,n):
-		slither_c.__init__(self,x,y,n)
+	def __init__(self,root,x,y,n):
+		slither_c.__init__(self,root,x,y,n)
 		self.game_runing=False
 	def game_slither_move(self):
 		self.move(False)
-		self.Move_after = cv.after(800, self.game_slither_move)
+		self.Move_after = self.cv.after(800, self.game_slither_move)
 	def start_fun(self,event=None):
 		if start_botton['text']=='Stop':
 			start_botton['text']='Start'
-			cv.after_cancel(self.Move_after)
+			self.cv.after_cancel(self.Move_after)
 			self.game_runing = False
 		else:
 			start_botton['text'] = 'Stop'
-			self.Move_after=cv.after(800,self.game_slither_move)
+			self.Move_after=self.cv.after(800,self.game_slither_move)
 			self.game_runing = True
 	def up_fun(self,event):
 		#print(event, type(event.keysym))
@@ -210,7 +218,8 @@ class game_c(slither_c):
 					  'Up': 'N',	'Down': 'S',	'Left': 'W',	'Right': 'E'}
 			#print(diredict[event.keysym])
 			self.change_head_dire(diredict[event.keysym])
-game=game_c(20,20,3)
+game=game_c(root,20,20,3)
+
 start_botton=tkinter.Button(root,text='Start',command=game.start_fun)
 start_botton.place(x=Option_region_x_center,y=30)
 root.bind('<space>',game.start_fun)
