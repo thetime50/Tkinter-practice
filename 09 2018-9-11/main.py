@@ -27,6 +27,7 @@ class room_c:
 	def __init__(self,root):
 		self.cv=tkinter.Canvas(root,bg='white',width=Canvas_wide,height=Canvas_hight)
 		self.cv.place(x=Win_interval,y=Win_interval)
+		#print(str(self.cv))
 		self.unit_list=[['e' for y in range(Unit_y_cnt)] for x in range(Unit_x_cnt)]
 		self.slither_cnt=0
 		self.food_cnt=0
@@ -34,6 +35,13 @@ class room_c:
 		self.empty_cnt=self.unit_cnt
 		#root.winfo_width()
 		#root.winfo_height()
+	def __del__(self):
+		#print(str(self.cv))
+		try:
+			self.cv.destroy()
+		except:
+			pass
+		del self.cv
 	class draw_unit_c:
 		''''''
 		img_list=['empty','food',\
@@ -179,6 +187,7 @@ class slither_c(room_c):
 			p=self.head
 			self.head = self.head.next
 			del p
+		room_c.__del__(self)
 	def append(self,dire,x,y):
 		unit=slither_unit_c(x,y,dire,self.tail)
 		if self.tail!=None:
@@ -244,6 +253,9 @@ class game_c(slither_c):
 		self.start_n=n
 		slither_c.__init__(self,self.root,self.start_x,self.start_y,self.start_n)
 		self.game_state='stop'
+		self.score=0
+	def __del__(self):
+		slither_c.__del__(self)
 	def game_slither_move(self):
 		ret=self.move()
 		if ret<0:
@@ -252,6 +264,7 @@ class game_c(slither_c):
 		else:
 			if ret>0:
 				self.generate_food()
+				self.score+=10
 			self.Move_after = self.cv.after(800, self.game_slither_move)
 	def start_fun(self,event=None):
 		if self.game_state == 'run':
@@ -265,11 +278,10 @@ class game_c(slither_c):
 			if self.food_cnt==0:
 				self.generate_food()
 		else:
-			slither_c.__del__(self)
-			slither_c.__init__(self, self.root, self.start_x, self.start_y, self.start_n)
-			self.game_state = 'stop'
+			self.__del__()
+			self.__init__(self.root, self.start_x, self.start_y, self.start_n)
 
-	def up_fun(self,event):
+	def dire_fun(self,event):
 		#print(event, type(event.keysym))
 		if self.game_state=='run':
 			diredict={'w': 'N',		's': 'S',		'a': 'W',		'd': 'E', \
@@ -279,15 +291,16 @@ class game_c(slither_c):
 game=game_c(root,20,20,3)
 
 start_botton=tkinter.Button(root,text='Start',command=game.start_fun)
-start_botton.place(x=Option_region_x_center,y=30)
+start_botton.place(x=Option_region_x_center,y=30,anchor=tkinter.CENTER)
 root.bind('<space>',game.start_fun)
-root.bind('<w>',game.up_fun)
-root.bind('<s>',game.up_fun)
-root.bind('<a>',game.up_fun)
-root.bind('<d>',game.up_fun)
-root.bind('<Up>',game.up_fun)
-root.bind('<Down>',game.up_fun)
-root.bind('<Left>',game.up_fun)
-root.bind('<Right>',game.up_fun)
+root.bind('<w>',game.dire_fun)
+root.bind('<s>',game.dire_fun)
+root.bind('<a>',game.dire_fun)
+root.bind('<d>',game.dire_fun)
+root.bind('<Up>',game.dire_fun)
+root.bind('<Down>',game.dire_fun)
+root.bind('<Left>',game.dire_fun)
+root.bind('<Right>',game.dire_fun)
+
 if __name__=='__main__':
 	root.mainloop()

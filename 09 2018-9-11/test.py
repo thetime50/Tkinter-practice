@@ -1,4 +1,5 @@
 from main import *
+'''
 stest1=slither_unit_c(10,10,'N')
 stest2=slither_unit_c(10,11,'S',stest1)
 stest1.next=stest2
@@ -70,3 +71,13 @@ slither.move(False)
 if __name__=='__main__':
 	root.mainloop()
 
+'''
+class a_c:
+	def __init__(self,m):
+	 	self.m=m
+	def __del__(self):
+	 	print(self.m,'del')
+
+a=a_c(1)
+a=a_c(2)
+a=0
