@@ -28,7 +28,6 @@ class room_c:
 		self.cv.place(x=Win_interval,y=Win_interval)
 		self.unit_list=[['e' for y in range(Unit_y_cnt)] for x in range(Unit_x_cnt)]
 		self.slither_cnt=0
-		self.food_cnt=0
 		self.unit_cnt=Unit_y_cnt*Unit_x_cnt
 		#root.winfo_width()
 		#root.winfo_height()
