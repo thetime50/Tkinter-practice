@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0391dc14-d3c7-47ce-bdb8-f0c548dff251" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/09_2018_9_11$main.coverage" NAME="main Coverage Results" MODIFIED="1538930688203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/09_2018_9_11$main.coverage" NAME="main Coverage Results" MODIFIED="1538932535267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/09_2018_9_11$test.coverage" NAME="test Coverage Results" MODIFIED="1538919227043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/09_2018_9_11$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1538880688606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../01 2018-9-1" />
     <SUITE FILE_PATH="coverage/09_2018_9_11$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1538880703713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../00 2018-8-23" />
@@ -38,12 +39,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="5797" />
+          <entry key="py" value="5962" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="5797" />
+          <entry key="Python" value="5962" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -65,17 +66,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+            <state relative-caret-position="-57">
+              <caret line="160" column="43" lean-forward="true" selection-start-line="160" selection-start-column="43" selection-end-line="160" selection-end-column="43" />
               <folding>
                 <element signature="e#24#38#0" expanded="true" />
-                <marker date="1538930660567" expanded="true" signature="587:614" ph="..." />
-                <marker date="1538930660567" expanded="true" signature="1085:1100" ph="..." />
-                <marker date="1538930660567" expanded="true" signature="1874:1875" ph="..." />
-                <marker date="1538930660567" expanded="true" signature="1936:2309" ph="..." />
-                <marker date="1538930660567" expanded="true" signature="5012:5236" ph="..." />
-                <marker date="1538930660567" expanded="true" signature="8063:8091" ph="..." />
-                <marker date="1538930660567" expanded="true" signature="9367:9749" ph="..." />
+                <marker date="1538932535118" expanded="true" signature="587:614" ph="..." />
+                <marker date="1538932535118" expanded="true" signature="1085:1100" ph="..." />
+                <marker date="1538932535118" expanded="true" signature="1874:1875" ph="..." />
+                <marker date="1538932535118" expanded="true" signature="1936:2309" ph="..." />
+                <marker date="1538932535118" expanded="true" signature="5012:5236" ph="..." />
+                <marker date="1538932535118" expanded="true" signature="8311:8339" ph="..." />
+                <marker date="1538932535118" expanded="true" signature="9615:9997" ph="..." />
               </folding>
             </state>
           </provider>
@@ -85,7 +86,7 @@
         <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/tkinter/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="129">
-              <caret line="2295" selection-start-line="2295" selection-end-line="2295" />
+              <caret line="1701" selection-start-line="1701" selection-end-line="1701" />
             </state>
           </provider>
         </entry>
@@ -126,6 +127,8 @@
       <find>print</find>
       <find>TkDefaultFont</find>
       <find>Score_number_label</find>
+      <find>blue#</find>
+      <find>try</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,9 +148,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="131" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="263" />
+    <option name="y" value="20" />
     <option name="width" value="868" />
     <option name="height" value="768" />
   </component>
@@ -276,15 +279,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="263" y="20" width="868" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14901665" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24381188" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.78214824" visible="true" weight="0.3266564" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7809406" visible="true" weight="0.3349131" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -292,7 +295,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.21785174" side_tool="true" visible="true" weight="0.3266564" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.21905941" side_tool="true" visible="true" weight="0.3349131" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.494705" weight="0.32973805" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49546143" weight="0.32973805" />
       <window_info anchor="bottom" id="调试" order="13" sideWeight="0.5779123" weight="0.32973805" />
@@ -319,7 +322,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>305</line>
+          <line>321</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
@@ -503,23 +506,23 @@
     <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
-          <caret line="2295" selection-start-line="2295" selection-end-line="2295" />
+          <caret line="1701" selection-start-line="1701" selection-end-line="1701" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        <state relative-caret-position="-57">
+          <caret line="160" column="43" lean-forward="true" selection-start-line="160" selection-start-column="43" selection-end-line="160" selection-end-column="43" />
           <folding>
             <element signature="e#24#38#0" expanded="true" />
-            <marker date="1538930660567" expanded="true" signature="587:614" ph="..." />
-            <marker date="1538930660567" expanded="true" signature="1085:1100" ph="..." />
-            <marker date="1538930660567" expanded="true" signature="1874:1875" ph="..." />
-            <marker date="1538930660567" expanded="true" signature="1936:2309" ph="..." />
-            <marker date="1538930660567" expanded="true" signature="5012:5236" ph="..." />
-            <marker date="1538930660567" expanded="true" signature="8063:8091" ph="..." />
-            <marker date="1538930660567" expanded="true" signature="9367:9749" ph="..." />
+            <marker date="1538932535118" expanded="true" signature="587:614" ph="..." />
+            <marker date="1538932535118" expanded="true" signature="1085:1100" ph="..." />
+            <marker date="1538932535118" expanded="true" signature="1874:1875" ph="..." />
+            <marker date="1538932535118" expanded="true" signature="1936:2309" ph="..." />
+            <marker date="1538932535118" expanded="true" signature="5012:5236" ph="..." />
+            <marker date="1538932535118" expanded="true" signature="8311:8339" ph="..." />
+            <marker date="1538932535118" expanded="true" signature="9615:9997" ph="..." />
           </folding>
         </state>
       </provider>

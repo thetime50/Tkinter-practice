@@ -151,12 +151,28 @@ class room_c:
 	def generate_food(self):
 		cnt=0
 		ind=random.randrange(self.empty_cnt)
+		t=time.time()
+		''''''
 		for x in range(Unit_x_cnt):
 			for y in range(Unit_y_cnt):
 				if self.unit_list[x][y]=='e':
 					cnt+=1
 					if cnt==ind:
 						self.draw_food(x,y)
+		''''''
+		'''
+		x,y=0,0
+		while x <Unit_x_cnt:
+			y=0
+			while y < Unit_y_cnt:
+				if self.unit_list[x][y]=='e':
+					cnt+=1
+					if cnt==ind:
+						self.draw_food(x,y)
+				y+=1
+			x+=1
+		'''
+		print((time.time()-t)*1000)
 
 class slither_unit_c:
 	def __init__(self,x,y,dire,prev=None,next=None):
