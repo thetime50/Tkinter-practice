@@ -151,7 +151,7 @@ class room_c:
 	def generate_food(self):
 		cnt=0
 		ind=random.randrange(self.empty_cnt)
-		t=time.time()
+		#t=time.time()
 		''''''
 		for x in range(Unit_x_cnt):
 			for y in range(Unit_y_cnt):
@@ -172,7 +172,7 @@ class room_c:
 				y+=1
 			x+=1
 		'''
-		print((time.time()-t)*1000)
+		#print((time.time()-t)*1000)
 
 class slither_unit_c:
 	def __init__(self,x,y,dire,prev=None,next=None):
