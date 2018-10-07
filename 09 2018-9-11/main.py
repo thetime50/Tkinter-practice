@@ -237,27 +237,41 @@ class slither_c(room_c):
 
 class game_c(slither_c):
 	def __init__(self,root,x,y,n):
-		slither_c.__init__(self,root,x,y,n)
-		self.game_runing=False
+		#print('12313',dir(self))
+		self.root=root
+		self.start_x=x
+		self.start_y=y
+		self.start_n=n
+		slither_c.__init__(self,self.root,self.start_x,self.start_y,self.start_n)
+		self.game_state='stop'
 	def game_slither_move(self):
 		ret=self.move()
-		if ret>0:
-			self.generate_food()
-		self.Move_after = self.cv.after(800, self.game_slither_move)
+		if ret<0:
+			self.game_state ='died'
+			start_botton['text'] = 'Restart'
+		else:
+			if ret>0:
+				self.generate_food()
+			self.Move_after = self.cv.after(800, self.game_slither_move)
 	def start_fun(self,event=None):
-		if start_botton['text']=='Stop':
+		if self.game_state == 'run':
+			self.game_state = 'stop'
 			start_botton['text']='Start'
 			self.cv.after_cancel(self.Move_after)
-			self.game_runing = False
-		else:
+		elif self.game_state == 'stop':
+			self.game_state = 'run'
 			start_botton['text'] = 'Stop'
 			self.Move_after=self.cv.after(800,self.game_slither_move)
-			self.game_runing = True
 			if self.food_cnt==0:
 				self.generate_food()
+		else:
+			slither_c.__del__(self)
+			slither_c.__init__(self, self.root, self.start_x, self.start_y, self.start_n)
+			self.game_state = 'stop'
+
 	def up_fun(self,event):
 		#print(event, type(event.keysym))
-		if self.game_runing:
+		if self.game_state=='run':
 			diredict={'w': 'N',		's': 'S',		'a': 'W',		'd': 'E', \
 					  'Up': 'N',	'Down': 'S',	'Left': 'W',	'Right': 'E'}
 			#print(diredict[event.keysym])
