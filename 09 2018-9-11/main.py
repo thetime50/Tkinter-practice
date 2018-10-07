@@ -14,7 +14,9 @@ Canvas_wide=Unit_x_cnt*Unit_l
 Canvas_hight=Unit_y_cnt*Unit_l
 Option_region_wide=400
 Win_interval=4
-Win_wide=Win_interval+Canvas_wide+Win_interval+Option_region_wide+Win_interval
+Option_region_x_offset=Win_interval+Canvas_wide+Win_interval
+Option_region_x_center=Option_region_x_offset+Option_region_wide/2
+Win_wide=Option_region_x_offset+Option_region_wide+Win_interval
 Win_high=Win_interval+Canvas_hight+Win_interval
 
 root=tkinter.Tk()
@@ -52,7 +54,7 @@ def draw_unit_pixels(ux,uy,ul,px1,py1,px2,py2):
 du=draw_unit_c()
 def draw_unit(sunit,clean=False):
 	#du.draw(x,y,dire)
-	global cv, Unit_l
+	global Unit_l
 	xoffset = sunit.x * Unit_l
 	yoffset = sunit.y * Unit_l
 	rectangle(xoffset,yoffset,Unit_l,Unit_l,'blue')
@@ -178,12 +180,47 @@ class slither_c:
 			draw_unit(self.tail)
 		return 0
 	def change_head_dire(self,dire):
-		if (self.head.prev.dire=='N'and dire!='S')and \
-				(self.head.prev.dire == 'S' and dire != 'N') and \
-				(self.head.prev.dire == 'W' and dire != 'E') and \
-				(self.head.prev.dire == 'E' and dire != 'W'):
+		if (self.head.next.dire=='N'and dire!='S')or \
+				(self.head.next.dire == 'S' and dire != 'N') or \
+				(self.head.next.dire == 'W' and dire != 'E') or \
+				(self.head.next.dire == 'E' and dire != 'W'):
 			self.head.dire=dire
 			draw_unit(self.head)
 
+class game_c(slither_c):
+	def __init__(self,x,y,n):
+		slither_c.__init__(self,x,y,n)
+		self.game_runing=False
+	def game_slither_move(self):
+		self.move(False)
+		self.Move_after = cv.after(800, self.game_slither_move)
+	def start_fun(self,event=None):
+		if start_botton['text']=='Stop':
+			start_botton['text']='Start'
+			cv.after_cancel(self.Move_after)
+			self.game_runing = False
+		else:
+			start_botton['text'] = 'Stop'
+			self.Move_after=cv.after(800,self.game_slither_move)
+			self.game_runing = True
+	def up_fun(self,event):
+		#print(event, type(event.keysym))
+		if self.game_runing:
+			diredict={'w': 'N',		's': 'S',		'a': 'W',		'd': 'E', \
+					  'Up': 'N',	'Down': 'S',	'Left': 'W',	'Right': 'E'}
+			#print(diredict[event.keysym])
+			self.change_head_dire(diredict[event.keysym])
+game=game_c(20,20,3)
+start_botton=tkinter.Button(root,text='Start',command=game.start_fun)
+start_botton.place(x=Option_region_x_center,y=30)
+root.bind('<space>',game.start_fun)
+root.bind('<w>',game.up_fun)
+root.bind('<s>',game.up_fun)
+root.bind('<a>',game.up_fun)
+root.bind('<d>',game.up_fun)
+root.bind('<Up>',game.up_fun)
+root.bind('<Down>',game.up_fun)
+root.bind('<Left>',game.up_fun)
+root.bind('<Right>',game.up_fun)
 if __name__=='__main__':
 	root.mainloop()
