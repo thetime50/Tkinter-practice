@@ -29,6 +29,7 @@ class OneDimensionalMoveClass:
 		self._tim0 = time.time()
 		self._t1 = 0
 		self._t2 = 0
+		self._t3 = 0
 		self._des_x = x
 		self._current_a = a
 		self._s0=0
@@ -67,7 +68,6 @@ class OneDimensionalMoveClass:
 			current_vmax = math.copysign(self._vmax, delta_x)
 			self._t1=(current_vmax-self._v0)/self._current_a
 			self._t2=self._t1+(delta_x - (current_vmax**2-self._v0**2)/2/self._current_a - current_vmax**2/self._current_a/2)/current_vmax
-
 		self._current_vmax=current_vmax
 
 		if abs(v - current_vmax) > 0.0001 and \
@@ -79,6 +79,7 @@ class OneDimensionalMoveClass:
 
 		self._s0=(self._current_vmax**2-self._v0**2)/2/self._current_a
 		self._s1=(self._t2-self._t1)*self._current_vmax
+		self._t3=self._t2+(delta_x-self._s0-self._s1)/current_vmax*2
 
 	def start_move_delta(self, delta_x):
 		self._start_move_delta(self._x + delta_x)
@@ -86,16 +87,13 @@ class OneDimensionalMoveClass:
 	def move_cb(self):
 		tim=time.time()
 		old_x=self._x
-		if(abs(self._x-self._des_x)<0.000001):
+		if(tim>= self._tim0+self._t3):
+			self._x=self._des_x
 			return old_x,self._x
-		if tim>self._tim0+self._t2:
+		elif tim>self._tim0+self._t2:
 			t=tim-self._tim0-self._t2
-			delta_x=self._s0 + self._s1 + self._current_vmax*t+0.5*self._current_a*t**2
-			temp_x=self._x0+delta_x
-			if math.copysign(1,temp_x-self._des_x) == math.copysign(1,self._des_x):
-				self._x=self._des_x
-			else:
-				self._x=temp_x
+			delta_x=self._s0 + self._s1 + self._current_vmax*t-0.5*self._current_a*t**2
+			self._x=self._x0+delta_x
 		elif tim > self._tim0 + self._t1:
 			t=tim-self._tim0-self._t1
 			delta_x=self._s0 + t*self._current_vmax
@@ -156,7 +154,7 @@ root.resizable(False,False)
 cv0=tk_add_canvas(root,cv0_w)
 cv1=tk_add_canvas(root,cv1_w)
 
-od_move=OneDimensionalMoveClass(10,10)
+od_move=OneDimensionalMoveClass(10,5000)
 def draw_cv0_recttangle(x,y,w,h,fill='black',width=0):
 	#print(x,y,w,h,fill,width)
 	return cv0.create_rectangle(x-w/2, y-h/2, x+w/2, y+h/2, fill=fill, width=width)
