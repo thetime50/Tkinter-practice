@@ -62,22 +62,27 @@ class OneDimensionalMoveClass:
 		self._v0 = v
 
 		self._des_x = des_x
-		self._current_a = math.copysign(self._a, delta_x)
+		if math.copysign(1,v)==math.copysign(1,delta_x) and\
+			v**2/self._a/2 > abs(delta_x):
+			over_out=-1
+		else:
+			over_out=1
+		self._current_a = math.copysign(self._a, delta_x)*over_out
 
 		current_vmax = (self._current_a * (delta_x) + 0.5 * v ** 2) ** 0.5
 		if current_vmax < self._vmax or self._vmax==0:
-			current_vmax = math.copysign(current_vmax, delta_x)
+			current_vmax = math.copysign(current_vmax, delta_x)*over_out
 			self._t2=self._t1=(current_vmax-self._v0)/self._current_a
 		else:
-			current_vmax = math.copysign(self._vmax, delta_x)
+			current_vmax = math.copysign(self._vmax, delta_x)*over_out
 			self._t1=(current_vmax-self._v0)/self._current_a
 			self._t2=self._t1+(delta_x - (current_vmax**2-self._v0**2)/2/self._current_a - current_vmax**2/self._current_a/2)/current_vmax
 		self._current_vmax=current_vmax
-
 		'''
+		temp_s=-self._v0**2/self._current_a/2#减速位移
 		if abs(v - current_vmax) > 0.0001 and \
-				math.copysign(1, v) == math.copysign(1, current_vmax) and \
-				abs(v) > abs(current_vmax):
+				math.copysign(1, temp_s) == math.copysign(1, delta_x) and \
+				abs(temp_s) > abs(delta_x):
 			# 不接近 同号 当前速度更大
 			self._v0 = current_vmax
 			self._t1=self._t2=0
@@ -86,8 +91,8 @@ class OneDimensionalMoveClass:
 		self._s0=(self._current_vmax**2-self._v0**2)/2/self._current_a
 		self._s1=(self._t2-self._t1)*self._current_vmax
 		self._t3=self._t2+(delta_x-self._s0-self._s1)/current_vmax*2
+		#print(self._v0,current_vmax)
 
-		print(self._v0,current_vmax)
 	def start_move_delta(self, delta_x):
 		self._start_move_delta(self.get_x() + delta_x)
 
