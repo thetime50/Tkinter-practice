@@ -14,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/11_2018_11_1$11_2018_11_1.coverage" NAME="11 2018-11-1 Coverage Results" MODIFIED="1541222108025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/11_2018_11_1$11_2018_11_1.coverage" NAME="11 2018-11-1 Coverage Results" MODIFIED="1541233096493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="694512722">
@@ -39,12 +39,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2351" />
+          <entry key="py" value="2585" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2351" />
+          <entry key="Python" value="2585" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -56,13 +56,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/11 2018-11-1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="172" column="30" selection-start-line="172" selection-start-column="30" selection-end-line="172" selection-end-column="30" />
+            <state relative-caret-position="118">
+              <caret line="81" column="20" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
               <folding>
-                <marker date="1541222100611" expanded="true" signature="1020:1023" ph="..." />
-                <marker date="1541222100611" expanded="true" signature="4171:4173" ph="..." />
-                <marker date="1541222100611" expanded="true" signature="4171:4251" ph="..." />
-                <marker date="1541222100611" expanded="true" signature="4171:4500" ph="..." />
+                <marker date="1541233082508" expanded="true" signature="1087:1090" ph="..." />
+                <marker date="1541233082508" expanded="true" signature="4267:4269" ph="..." />
+                <marker date="1541233082508" expanded="true" signature="4267:4347" ph="..." />
+                <marker date="1541233082508" expanded="true" signature="4267:4596" ph="..." />
               </folding>
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/tkinter/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
+            <state relative-caret-position="128">
               <caret line="1701" selection-start-line="1701" selection-end-line="1701" />
             </state>
           </provider>
@@ -93,6 +93,10 @@
       <find>.x</find>
       <find>create_rectangle</find>
       <find>draw_cv0_recttangle</find>
+      <find>get_v</find>
+      <find>._x</find>
+      <find>._old_x</find>
+      <find>._v</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,7 +115,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="229" />
     <option name="y" value="25" />
     <option name="width" value="868" />
@@ -198,15 +202,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="229" y="25" width="868" height="768" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25742576" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15733737" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33807266" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32819724" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -215,7 +219,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="调试" order="11" weight="0.32973805" />
+      <window_info anchor="bottom" id="调试" order="11" weight="0.32819724" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -234,20 +238,20 @@
   <component name="editorHistoryManager">
     <entry file="file://E:/Users/LGame/AppData/Local/Programs/Python/Python37/Lib/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
+        <state relative-caret-position="128">
           <caret line="1701" selection-start-line="1701" selection-end-line="1701" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/11 2018-11-1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="172" column="30" selection-start-line="172" selection-start-column="30" selection-end-line="172" selection-end-column="30" />
+        <state relative-caret-position="118">
+          <caret line="81" column="20" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
           <folding>
-            <marker date="1541222100611" expanded="true" signature="1020:1023" ph="..." />
-            <marker date="1541222100611" expanded="true" signature="4171:4173" ph="..." />
-            <marker date="1541222100611" expanded="true" signature="4171:4251" ph="..." />
-            <marker date="1541222100611" expanded="true" signature="4171:4500" ph="..." />
+            <marker date="1541233082508" expanded="true" signature="1087:1090" ph="..." />
+            <marker date="1541233082508" expanded="true" signature="4267:4269" ph="..." />
+            <marker date="1541233082508" expanded="true" signature="4267:4347" ph="..." />
+            <marker date="1541233082508" expanded="true" signature="4267:4596" ph="..." />
           </folding>
         </state>
       </provider>
