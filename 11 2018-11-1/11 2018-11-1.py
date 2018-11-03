@@ -154,23 +154,40 @@ root.resizable(False,False)
 cv0=tk_add_canvas(root,cv0_w)
 cv1=tk_add_canvas(root,cv1_w)
 
-od_move=OneDimensionalMoveClass(10,5000)
-def draw_cv0_recttangle(x,y,w,h,fill='black',width=0):
+od_move=OneDimensionalMoveClass(10,1000)
+def draw_cv0_recttangle(cv,x,y,w,h,fill='black',width=0):
 	#print(x,y,w,h,fill,width)
-	return cv0.create_rectangle(x-w/2, y-h/2, x+w/2, y+h/2, fill=fill, width=width)
-rect0=draw_cv0_recttangle(10,cv0_w.h/2,cv0_w.h*0.01,cv0_w.h*0.6,"black")
+	if w>1:	w-=1
+	else: w=0
+	if h>1: h-=1
+	else: h=0
+	return cv.create_rectangle(x-w/2, y-h/2, x+w/2, y+h/2, fill=fill, width=width)
+def change_recttangle(cv,rect,x,y,w,h):
+	#print(x,y,w,h,fill,width)
+	if w>1:	w-=1
+	else: w=0
+	if h>1: h-=1
+	else: h=0
+	return cv.coords(rect,x-w/2, y-h/2, x+w/2, y+h/2)
+
+rect0=draw_cv0_recttangle(cv0,10,cv0_w.h/2,cv0_w.h*0.01,cv0_w.h*0.6,"black")
 print(type(rect0),"  ",rect0)
 def cv0_b1_fun(event):
 	#print(event)
 	od_move.start_move_des(event.x)
+	#draw_cv0_recttangle(cv0,event.x, cv0_w.h / 2, 2, cv0_w.h * 0.6, fill="red")
+
 def cv0_after_fun():
 	old_x,x=od_move.move_cb()
-	#draw_cv0_recttangle(old_x, cv0_w.h / 2, cv0_w.h*0.1, cv0_w.h * 0.6, fill="white")
-	draw_cv0_recttangle(x, cv0_w.h / 2, cv0_w.h*0.01, cv0_w.h * 0.6, fill="black")
-	cv0.after(100, cv0_after_fun)
+	if old_x!=x:
+		#draw_cv0_recttangle(cv0,old_x, cv0_w.h / 2, cv0_w.h*0.01, cv0_w.h * 0.6, fill="white")
+		#draw_cv0_recttangle(cv0,x, cv0_w.h / 2, cv0_w.h*0.01, cv0_w.h * 0.6, fill="black")
+		change_recttangle(cv0,rect0,x, cv0_w.h / 2, cv0_w.h*0.01, cv0_w.h * 0.6)
+		#print(x)
+	cv0.after(20, cv0_after_fun)
 cv0.bind('<B1-Motion>',cv0_b1_fun)
 cv0.bind('<Button-1>',cv0_b1_fun)
-cv0.after(100, cv0_after_fun)
+cv0.after(20, cv0_after_fun)
 
 
 root.mainloop()
